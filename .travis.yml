@@ -11,14 +11,14 @@ python:
   - "3.7-dev" # 3.7 development branch
   - "nightly"
   
-  cache: pip
+  #cache: pip
   
 # command to install dependencies
 install:
  # - pip install pipreqs
  # - pipreqs \Users\Tob14\Dropbox\Elektronikingeniør\3.semester\E3SWE\SWE2017
   
-  - pip install -r requirements.txt
+ #- pip install -r requirements.txt
 # command to run tests
 script:
   - pytest # or py.test for Python versions 3.5 and below

@@ -12,9 +12,10 @@ python:
   - "nightly"
 # command to install dependencies
 install:
-  - pip install pipreqs
-  - pipreqs \Users\Tob14\Dropbox\Elektronikingeniør\3.semester\E3SWE\SWE2017
-  - pip install -r requirements.txt
+ # - pip install pipreqs
+ # - pipreqs \Users\Tob14\Dropbox\Elektronikingeniør\3.semester\E3SWE\SWE2017
+  
+  - pip install -r requirements.txt --use-mirrors
 # command to run tests
 script:
   - pytest # or py.test for Python versions 3.5 and below

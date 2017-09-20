@@ -15,6 +15,7 @@ python:
   
 # command to install dependencies
 install:
+  - pip install hypothesis pytest 
  # - pip install pipreqs
  # - pipreqs \Users\Tob14\Dropbox\Elektronikingeniør\3.semester\E3SWE\SWE2017
   

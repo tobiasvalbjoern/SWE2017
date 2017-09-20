@@ -1,0 +1,7 @@
+virtualenv testvenv
+
+testvenv\Scripts\activate.bat
+
+pip install -r requirements.txt
+
+pytest RLE

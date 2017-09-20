@@ -1,4 +1,4 @@
-
+import sys
 
 def encode(mess):
     if not mess : return ''
@@ -20,32 +20,50 @@ def encode(mess):
 
 
 def decode(mess):
-	#in case of no input. Don't do anything
-	if not mess : return ''
+	return ''.join([n*c for n,c in mess])
 	
-	res = []
-	tuple=()
+	#my first approach is down below. The above is condensed.
+	# #in case of no input. Don't do anything
+	# if not mess : return ''
 	
-	#how many elements are there in the list?
-	end=len(mess)
+	# res = []
 	
-	#use the tuple to traverse through the list of tuples in mess, 
-	#until the end of the list is reached.
-	for tuple in mess[0:end]:
-		count = 1
-		#the number of times the character occurs 
-		#is in the first spot in the tuple. 
-		n=tuple[0]
-		#the character that needs to be printed n number of times is
-		#in the second spot in the tuple
-		char=tuple[1]
+	# #how many elements are there in the list?
+	# end=len(mess)
 	
-		#append a character until you have printed n characters.
-		while count <= n: 
-			#append the characters to our list.
-			res.append(f'{char}')
-			count+=1	
+	# #use the tuple to traverse through the list of tuples in mess, 
+	# #until the end of the list is reached.
+	# for t in mess:
+		
+		# #the number of times the character occurs 
+		# #is in the first spot in the tuple. 
+		# n=t[0]
+		
+		# #the character that needs to be printed n number of times is
+		# #in the second spot in the tuple
+		# char=t[1]
+		
+		# #write the desired number of chars
+		# res.append(n*char)	
 			
-	#return a string that is equal to the list 
-	#with no seperation between the elements.  	
-	return ''.join(res)
+	# #return a string that is equal to the list 
+	# #with no seperation between the elements.  	
+	# return ''.join(res)
+
+# def main(argv):
+	# if  len(sys.argv)==3:
+		# if sys.argv[1]=='-e':
+			# with open(sys.argv[2],'r') as f:
+				# mess=f.read()
+				# print(encode(mess))
+		# elif sys.argv[1]=='-d':
+			# with open(sys.argv[2],'r') as f:
+				# mess=f.read()
+				# print(decode(mess))
+	# else:
+		# print ("RLE.py <coding> <file>")
+		# sys.exit(2)
+	
+	
+# if __name__ == "__main__":
+   # main(sys.argv[1:])	

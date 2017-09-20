@@ -1,6 +1,11 @@
 ﻿from RLE import encode, decode
 from pytest import raises
 
+#For the hypothesis
+from hypothesis import given
+from hypothesis.strategies import text
+
+
 def test_encode():
     assert encode('kkkkkbbbb') == [(5,'k'),(4,'b')]
     assert encode('111k') == [(3,'1'),(1,'k')]
@@ -33,10 +38,6 @@ def test_encode_emoji():
     assert encode('😇') == [(1,'😇')]
     assert encode('😇😇😇😇😇') == [(5,'😇')]
 
-#def test_exeption():
-#    raises(encode(111),TypeError)
-
-
 def test_decode():
     assert decode([(5,'k'),(4,'b')]) == 'kkkkkbbbb'
     assert decode([(5,'K')]) == 'KKKKK'
@@ -50,4 +51,7 @@ def test_decode():
 def test_decode_empty():
     assert decode('') == ''
 
-
+#For hypothesis
+@given(text())
+def test_decode_inverts_encode(s):
+    assert decode(encode(s)) == s
